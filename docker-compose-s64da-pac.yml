@@ -1,0 +1,18 @@
+version: '3'
+services:
+  s64da:
+    image: repo.swarm64.com/swarm64da-pac-a10-psql-11:${S64_DA_VERSION}
+    volumes:
+      - ${DATA_S64DA}:/data
+      - /sys/class/fpga/intel-fpga-dev.0/intel-fpga-port.0:/sys/class/fpga/intel-fpga-dev.0/intel-fpga-port.0
+      - ./files:/docker-entrypoint-initdb.d
+    environment:
+      - PGDATA=/data
+    cap_add:
+      - IPC_LOCK
+    devices:
+      - /dev/intel-fpga-fme.0:/dev/intel-fpga-fme.0
+      - /dev/intel-fpga-port.0:/dev/intel-fpga-port.0
+    shm_size: '1024g'
+    ports:
+      - ${DB_PORT_S64DA}:5432

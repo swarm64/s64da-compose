@@ -1,0 +1,12 @@
+version: '3'
+services:
+  psql:
+    image: postgres:${PSQL_VERSION}
+    volumes:
+      - ${DATA_PSQL}:/data
+      - ./files:/docker-entrypoint-initdb.d
+    environment:
+      - PGDATA=/data
+    shm_size: '1024g'
+    ports:
+      - ${DB_PORT_PSQL}:5432
