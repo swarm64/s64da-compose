@@ -1,4 +1,0 @@
-shared_preload_libraries = 'swarm64da.so'
-swarm64da.fpga_backend = 'SDA'
-swarm64da.enable_optimization = on
-swarm64da.maximize_parallel_workers_per_query = on

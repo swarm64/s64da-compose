@@ -15,8 +15,11 @@ This docker-compose is to start an instance of S64 DA or PSQL or both.
    changes as noted in the file itself. If you want to run both databases at
    the same time, the ports they listen on must differ.
 
-2. Apply any PG configuration changes to `files/postgresql.conf`. This file
-   will be copied on database startup once.
+2. Apply any PG configuration changes to `configs/pg.env` and/or
+   `configs/s64da.env`. Each setting must be prefixed with `pgconf_` in order
+   to be picked up. Changing a value with an existing data directory will cause
+   the config keys to be updated. The suffix following `pgconf_` before `=`
+   must match a key in postgresql.conf.
 
 3. To start a database instance, call `docker-compose` accordingly:
 
