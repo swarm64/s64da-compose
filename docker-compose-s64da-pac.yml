@@ -3,13 +3,15 @@ services:
   s64da:
     image: repo.swarm64.com/swarm64da-pac-a10-psql-11:${S64_DA_VERSION}
     volumes:
+      - ./init.sh:/init.sh:ro
       - ${DATA_S64DA}:/data
       - /sys/class/fpga/intel-fpga-dev.0/intel-fpga-port.0:/sys/class/fpga/intel-fpga-dev.0/intel-fpga-port.0
-      - ./files:/docker-entrypoint-initdb.d
     environment:
       - PGDATA=/data
     env_file:
+      - ./configs/pg.env
       - ./configs/s64da.env
+    entrypoint: /init.sh postgres
     cap_add:
       - IPC_LOCK
     devices:
