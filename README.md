@@ -7,7 +7,7 @@ a benchmark using the [Swarm64 TPC Toolkit](https://github.com/swarm64/tpc-toolk
 # Prerequisites
 
 - Python 3.6 or higher
-- docker-compose (eg. use: python3.6 -m pip install docker-compose)
+- docker-compose (eg. use: python3.6 / python3 -m pip install docker-compose)
 
 
 # Start an instance or multiple instances
@@ -31,7 +31,7 @@ a benchmark using the [Swarm64 TPC Toolkit](https://github.com/swarm64/tpc-toolk
 
    - S64 DA on Intel PAC Arria10: `docker-compose -f docker-compose-s64da-pac.yml up`
    - S64 DA on Xilinx Alveo U200: `docker-compose -f docker-compose-s64da-xilinx.yml up`
-   - Native PostgreSQL: `docker-compomse -f docker-compose-psql.yml up`
+   - Native PostgreSQL: `docker-compose -f docker-compose-psql.yml up`
 
 4. Connect to the instance: `psql -h localhost -U postgres`
 
