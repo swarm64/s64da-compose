@@ -7,7 +7,7 @@ a benchmark using the [Swarm64 TPC Toolkit](https://github.com/swarm64/tpc-toolk
 # Prerequisites
 
 - Python 3.6 or higher
-- docker-compose (eg. use: python3.6 / python3 -m pip install docker-compose)
+- docker-compose (eg. use: python3 -m pip install docker-compose)
 
 
 # Start an instance or multiple instances
