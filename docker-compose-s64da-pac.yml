@@ -6,6 +6,7 @@ services:
       - ./init.sh:/init.sh:ro
       - ${DATA_S64DA}:/data
       - /sys/class/fpga/intel-fpga-dev.0/intel-fpga-port.0:/sys/class/fpga/intel-fpga-dev.0/intel-fpga-port.0
+      # - /sys/class/fpga/intel-fpga-dev.1/intel-fpga-port.1:/sys/class/fpga/intel-fpga-dev.1/intel-fpga-port.1
     environment:
       - PGDATA=/data
     env_file:
@@ -17,6 +18,8 @@ services:
     devices:
       - /dev/intel-fpga-fme.0:/dev/intel-fpga-fme.0
       - /dev/intel-fpga-port.0:/dev/intel-fpga-port.0
+      # - /dev/intel-fpga-fme.1:/dev/intel-fpga-fme.1
+      # - /dev/intel-fpga-port.1:/dev/intel-fpga-port.1
     shm_size: '1024g'
     ports:
       - ${DB_PORT_S64DA}:5432

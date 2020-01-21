@@ -14,8 +14,13 @@ services:
     cap_add:
       - IPC_LOCK
     devices:
-      - /dev/xclmgmt${XCL_MGMT_ID}:/dev/xclmgmt${XCL_MGMT_ID}
-      - /dev/dri/renderD${DRI_RENDER_ID}:/dev/dri/renderD${DRI_RENDER_ID}
+      ## The Xilinx device IDs, please match to your system configuration.
+      ## Device information for xclmgmt* can be collected with: ls /dev/xclmgmt*
+      - /dev/xclmgmt768:/dev/xclmgmt768
+      # - /dev/xclmgmt1280:/dev/xclmgmt1280
+      ## Device information for renderD* can be collected with: ls /dev/dri/renderD*
+      - /dev/dri/renderD128:/dev/dri/renderD128
+      # - /dev/dri/renderD129:/dev/dri/renderD129
     shm_size: '1024g'
     ports:
       - ${DB_PORT_S64DA}:5432
