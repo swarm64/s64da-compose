@@ -45,6 +45,6 @@ a benchmark using the [Swarm64 TPC Toolkit](https://github.com/swarm64/tpc-toolk
    - S64 DA on Xilinx Alveo U200: `docker-compose -f docker-compose-s64da-xilinx.yml up`
    - Native PostgreSQL: `docker-compose -f docker-compose-psql.yml up`
 
-5. Connect to the instance: `psql -h localhost -U postgres`
+5. Connect to the instance: `psql -h localhost -U postgres` (optional: -p {PORT} if other than 5432)
 
 6. Ingest data or run a benchmark for example with the [Swarm64 TPC Toolkit](https://github.com/swarm64/tpc-toolkit)
