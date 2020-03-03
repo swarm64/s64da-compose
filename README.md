@@ -27,6 +27,13 @@ a benchmark using the [Swarm64 TPC Toolkit](https://github.com/swarm64/tpc-toolk
    The provided default configuration is suited to run benchmarks up to 1TB worth 
    of data and 384GB of system RAM.
 
+   Important: to run with Swarm64 DA before version 3.3, the following settings
+   are mandatory:
+
+   ```
+   pgconf_parallel_leader_participation=on
+   ```
+
 3. To start a database instance, call `docker-compose` accordingly:
 
    - S64 DA on Intel PAC Arria10: `docker-compose -f docker-compose-s64da-pac.yml up`
