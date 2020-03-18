@@ -1,6 +1,6 @@
 # Summary
 
-Swarm64 DA Docker Compose will assist to start instance of S64 DA or native PSQL.
+Swarm64 DA Docker Compose will assist in starting an instance of S64 DA or native PSQL.
 Once the instance is up and running you can connect through a psql client or run
 a benchmark using the [Swarm64 TPC Toolkit](https://github.com/swarm64/tpc-toolkit).
 
