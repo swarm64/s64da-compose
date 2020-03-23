@@ -2,7 +2,7 @@
 
 Swarm64 DA Docker Compose will assist in starting an instance of S64 DA or native PSQL.
 Once the instance is up and running you can connect through a psql client or run
-a benchmark using the [Swarm64 TPC Toolkit](https://github.com/swarm64/tpc-toolkit).
+a benchmark using the [Swarm64 DA Benchmark Toolkit](https://github.com/swarm64/s64da-benchmark-toolkit).
 
 Important notice: In order to guarantee compatibility between S64 DA and
 s64da-compose, please checkout the GIT Tag that corresponds to your version of S64 DA. 
@@ -53,4 +53,4 @@ For example, if your version of S64 DA is 3.1.0, clone this repository and execu
 
 5. Connect to the instance: `psql -h localhost -U postgres` (optional: -p {PORT} if other than 5432)
 
-6. Ingest data or run a benchmark for example with the [Swarm64 TPC Toolkit](https://github.com/swarm64/tpc-toolkit)
+6. Ingest data or run a benchmark for example with the [Swarm64 DA Benchmark Toolkit](https://github.com/swarm64/s64da-benchmark-toolkit)
