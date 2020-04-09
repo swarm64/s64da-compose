@@ -22,7 +22,7 @@ For example, if your version of S64 DA is 3.1.0, clone this repository and execu
    Swarm64 DA version and the data directories. If you want to run both 
    databases at the same time, the ports they listen on must differ.
    
-2. Setting up the FPGAs:
+2. (Optional) Setting up the FPGAs:
 
    For Intel PAC Arria10: No changes are required when operating with a single
    FPGA. For multi-FPGA usage, uncomment the lines that map in a second FPGA in 
