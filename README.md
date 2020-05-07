@@ -26,12 +26,12 @@ For example, if your version of S64 DA is 3.1.0, clone this repository and execu
 
    For Intel PAC Arria10: No changes are required when operating with a single
    FPGA. For multi-FPGA usage, uncomment the lines that map in a second FPGA in 
-   `docker-compose-s64da-pac.yml`. Add more mappings to include more FPGAs.
+   `docker-compose-s64da-intel-pac-a10.yml`. Add more mappings to include more FPGAs.
 
-   For Xilinx Alveo U200: Verify that the FPGA IDs listed under the 'devices'
-   section in `docker-compose-s64da-xilinx.yml` are correct. For multi-FPGA usage, 
-   uncomment the lines that map in a second FPGA and verify the IDs. Add more 
-   mappings to include more FPGAs.
+   For Xilinx Alveo U50/U200/U250: Verify that the FPGA IDs listed under the 
+   'devices' section in `docker-compose-s64da-xilinx-alveo-{your_target}.yml` 
+   are correct. For multi-FPGA usage, uncomment the lines that map in a second 
+   FPGA and verify the IDs. Add more mappings to include more FPGAs.
 
 3. (Optional) Apply any PG configuration changes to `configs/pg.env` and/or
    `configs/s64da.env`. Each setting must be prefixed with `pgconf_` in order
@@ -46,8 +46,10 @@ For example, if your version of S64 DA is 3.1.0, clone this repository and execu
 
 4. To start a database instance, call `docker-compose` accordingly:
 
-   - S64 DA on Intel PAC Arria10: `docker-compose -f docker-compose-s64da-pac.yml up`
-   - S64 DA on Xilinx Alveo U200: `docker-compose -f docker-compose-s64da-xilinx.yml up`
+   - S64 DA on Intel PAC Arria10: `docker-compose -f docker-compose-s64da-intel-pac-a10.yml up`
+   - S64 DA on Xilinx Alveo U50: `docker-compose -f docker-compose-s64da-xilinx-alveo-u50.yml up`
+   - S64 DA on Xilinx Alveo U200: `docker-compose -f docker-compose-s64da-xilinx-alveo-u200.yml up`
+   - S64 DA on Xilinx Alveo U250: `docker-compose -f docker-compose-s64da-xilinx-alveo-u250.yml up`
    - S64 DA CPU accelerated: `docker-compose -f docker-compose-s64da-cpu.yml up`
    - Native PostgreSQL: `docker-compose -f docker-compose-psql.yml up`
 
