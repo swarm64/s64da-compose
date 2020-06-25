@@ -21,8 +21,12 @@ For example, if your version of S64 DA is 4.2.0, clone this repository and execu
    changes as noted in the file itself. In particular, pay attention the the
    Swarm64 DA version and the data directories. If you want to run both 
    databases at the same time, the ports they listen on must differ.
+
+2. Copy your S64 DA license file into the `/license` directory and rename it 
+   to `s64da_license.license`. If you don't have a license file yet request 
+   one by contacting support@swarm64.com.
    
-2. (Optional) Setting up the FPGAs:
+3. (Optional) Setting up the FPGAs:
 
    For Intel PAC Arria10: No changes are required when operating with a single
    FPGA. For multi-FPGA usage, uncomment the lines that map in a second FPGA in 
@@ -33,7 +37,7 @@ For example, if your version of S64 DA is 4.2.0, clone this repository and execu
    are correct. For multi-FPGA usage, uncomment the lines that map in a second 
    FPGA and verify the IDs. Add more mappings to include more FPGAs.
 
-3. (Optional) Apply any PG configuration changes to `configs/pg.env` and/or
+4. (Optional) Apply any PG configuration changes to `configs/pg.env` and/or
    `configs/s64da.env`. Each setting must be prefixed with `pgconf_` in order
    to be picked up. Changing a value with an existing data directory will cause
    the config keys to be updated. The suffix following `pgconf_` before `=`
@@ -44,7 +48,7 @@ For example, if your version of S64 DA is 4.2.0, clone this repository and execu
    The provided default configuration is suited to run benchmarks up to 1TB worth 
    of data and 384GB of system RAM.
 
-4. To start a database instance, call `docker-compose` accordingly:
+5. To start a database instance, call `docker-compose` accordingly:
 
    - S64 DA on Intel PAC Arria10: `docker-compose -f docker-compose-s64da-intel-pac-a10.yml up`
    - S64 DA on Xilinx Alveo U50: `docker-compose -f docker-compose-s64da-xilinx-alveo-u50.yml up`
@@ -53,6 +57,6 @@ For example, if your version of S64 DA is 4.2.0, clone this repository and execu
    - S64 DA CPU accelerated: `docker-compose -f docker-compose-s64da-cpu.yml up`
    - Native PostgreSQL: `docker-compose -f docker-compose-psql.yml up`
 
-5. Connect to the instance: `psql -h localhost -U postgres` (optional: -p {PORT} if other than 5432)
+6. Connect to the instance: `psql -h localhost -U postgres` (optional: -p {PORT} if other than 5432)
 
-6. Ingest data or run a benchmark for example with the [Swarm64 DA Benchmark Toolkit](https://github.com/swarm64/s64da-benchmark-toolkit)
+7. Ingest data or run a benchmark for example with the [Swarm64 DA Benchmark Toolkit](https://github.com/swarm64/s64da-benchmark-toolkit)

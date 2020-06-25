@@ -5,6 +5,7 @@ services:
     volumes:
       - ./init.sh:/init.sh:ro
       - ${DATA_S64DA}:/data
+      - ./license:/s64da_license      
       - /sys/class/fpga/intel-fpga-dev.0/intel-fpga-port.0:/sys/class/fpga/intel-fpga-dev.0/intel-fpga-port.0
       # - /sys/class/fpga/intel-fpga-dev.1/intel-fpga-port.1:/sys/class/fpga/intel-fpga-dev.1/intel-fpga-port.1
     environment:
