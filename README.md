@@ -23,8 +23,8 @@ For example, if your version of S64 DA is 4.2.0, clone this repository and execu
    databases at the same time, the ports they listen on must differ.
 
 2. Copy your S64 DA license file into the `/license` directory and rename it 
-   to `s64da_license.license`. If you don't have a license file yet request 
-   one by contacting support@swarm64.com.
+   to `s64da.license`. Replace the existing dummy license file. If you don't 
+   have a license file yet request one by contacting support@swarm64.com.
    
 3. (Optional) Setting up the FPGAs:
 

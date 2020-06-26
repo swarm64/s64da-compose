@@ -5,7 +5,7 @@ services:
     volumes:
       - ./init.sh:/init.sh:ro
       - ${DATA_S64DA}:/data
-      - ./license:/s64da_license      
+      - ./license/s64da.license:/s64da.license:ro
     environment:
       - PGDATA=/data
     env_file:
