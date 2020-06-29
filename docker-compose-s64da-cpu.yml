@@ -1,15 +1,17 @@
 version: '3'
 services:
   s64da:
-    image: hub.swarm64.com/s64da-swarm64-cpu:psql-11-11
-    env_file:
-      - ./configs/pg.env
-      - ./configs/s64da.env
-    entrypoint: /init.sh postgres    
+    image: repo.swarm64.com/swarm64da-cpu-psql-11:${S64_DA_VERSION}
     volumes:
       - ./init.sh:/init.sh:ro
       - ${DATA_S64DA}:/data
       - ./license/s64da.license:/s64da.license:ro
+    environment:
+      - PGDATA=/data
+    env_file:
+      - ./configs/pg.env
+      - ./configs/s64da.env
+    entrypoint: /init.sh postgres
     cap_add:
       - IPC_LOCK
     shm_size: '1024g'
