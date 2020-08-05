@@ -1,0 +1,13 @@
+version: '3'
+services:
+  postgresql:
+    volumes:
+      - ./init.sh:/init.sh:ro
+    env_file:
+      - ./configs/pg.env
+    environment:
+      - PGDATA=/data
+    entrypoint: /init.sh postgres
+    shm_size: '1024g'
+    ports:
+      - ${POSTGRES_HOST}:${DB_PORT_PSQL}:5432
