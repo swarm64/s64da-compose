@@ -1,15 +1,9 @@
 version: '3'
 services:
-  psql:
+  postgresql:
     image: postgres:${PSQL_VERSION}
+    container_name: postgresql-${PSQL_VERSION}
     volumes:
-      - ./init.sh:/init.sh:ro
       - ${DATA_PSQL}:/data
-    env_file:
-      - ./configs/pg.env
-    entrypoint: /init.sh postgres
-    environment:
-      - PGDATA=/data
-    shm_size: '1024g'
     ports:
-      - ${DB_PORT_PSQL}:5432
+      - ${POSTGRES_HOST}:${DB_PORT_PSQL}:5432
