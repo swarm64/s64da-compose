@@ -8,8 +8,6 @@ services:
       - ./license/s64da.license:/s64da.license:ro
     env_file:
       - ./configs/s64da.env
-    cap_add:
-      - IPC_LOCK
     shm_size: '1024g'
     ports:
       - ${POSTGRES_HOST}:${DB_PORT_S64DA}:5432
