@@ -6,24 +6,23 @@ a benchmark using the [Swarm64 DA Benchmark Toolkit](https://github.com/swarm64/
 
 Important notice: In order to guarantee compatibility between S64 DA and
 s64da-compose, please checkout the GIT Tag that corresponds to your version of S64 DA.
-For example, if your version of S64 DA is 5.0.0-beta, clone this repository and execute
-`git checkout v5.0.0-beta` within the the repository root folder before proceeding.
+For example, if your version of S64 DA is 5.0.0, clone this repository and run
+`git checkout v5.0.0` within the the repository root folder before proceeding.
 
 # Prerequisites
 
 - Python 3.6 or higher
-- docker-compose (eg. use: python3 -m pip install docker-compose)
-
+- docker-compose 1.26 or higher (eg. use: python3 -m pip install docker-compose)
 
 # Start an instance or multiple instances
 
-1. Before starting an instance, revisit the `.env` file and apply necessary
+1. Before starting an instance, review the `.env` file and apply necessary
    changes as noted in the file itself. In particular, pay attention the the
    Swarm64 DA version and the data directories. If you want to run both
    databases at the same time, the ports they listen on must differ.
 
-2. Copy your S64 DA license file into the `/license` directory and rename it
-   to `s64da.license`. Replace the existing dummy license file. If you don't
+2. Copy your S64 DA license file into the `license` directory and rename it
+   to `s64da.license`, replacing the existing dummy license file. If you don't
    have a license file yet request one by contacting support@swarm64.com.
 
 3. (Optional) Apply any PG configuration changes to `configs/pg.env` and/or
@@ -34,8 +33,8 @@ For example, if your version of S64 DA is 5.0.0-beta, clone this repository and 
    dot replace the `.` with `__`. For instance, `a.b=c` becomes:
    `pgconf_a__b=c`.
 
-   The provided default configuration is suited to run benchmarks up to 1TB worth
-   of data and 384GB of system RAM.
+   The provided default configuration is suitable for running benchmarks up to
+   1 TiB worth of data on a system with 384 GiB of memory.
 
 4. To start a database instance, call `docker-compose` accordingly:
 
