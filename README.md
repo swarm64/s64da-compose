@@ -6,8 +6,8 @@ a benchmark using the [Swarm64 DA Benchmark Toolkit](https://github.com/swarm64/
 
 Important notice: In order to guarantee compatibility between S64 DA and
 s64da-compose, please checkout the GIT Tag that corresponds to your version of S64 DA.
-For example, if your version of S64 DA is 5.0.0, clone this repository and run
-`git checkout v5.0.0` within the the repository root folder before proceeding.
+For example, if your version of S64 DA is 5.1.0, clone this repository and run
+`git checkout v5.1.0` within the the repository root folder before proceeding.
 
 # Prerequisites
 
