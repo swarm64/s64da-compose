@@ -5,7 +5,7 @@ prefix=pgconf_
 if [ -f $PGDATA/postgresql.conf ]; then
     pg_config=$PGDATA/postgresql.conf
 else
-    pg_config=/usr/share/postgresql/postgresql.conf.sample
+    pg_config=/usr/share/$VARIANT_PATH_NAME/$PG_MAJOR/postgresql.conf.sample
 fi
 
 for key in $(compgen -e); do
